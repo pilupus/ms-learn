@@ -7,42 +7,41 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
 
-namespace ContosoPizza.Migrations
+namespace ContosoPizza.Migrations;
+
+[DbContext(typeof(PizzaContext))]
+[Migration("20230501213855_InitialCreate")]
+partial class InitialCreate
 {
-    [DbContext(typeof(PizzaContext))]
-    [Migration("20230501213855_InitialCreate")]
-    partial class InitialCreate
+    /// <inheritdoc />
+    protected override void BuildTargetModel(ModelBuilder modelBuilder)
     {
-        /// <inheritdoc />
-        protected override void BuildTargetModel(ModelBuilder modelBuilder)
-        {
 #pragma warning disable 612, 618
-            modelBuilder.HasAnnotation("ProductVersion", "7.0.5");
+        modelBuilder.HasAnnotation("ProductVersion", "7.0.5");
 
-            modelBuilder.Entity("ContosoPizza.Models.Pizza", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("INTEGER");
+        modelBuilder.Entity("ContosoPizza.Models.Pizza", b =>
+            {
+                b.Property<int>("Id")
+                    .ValueGeneratedOnAdd()
+                    .HasColumnType("INTEGER");
 
-                    b.Property<bool>("IsGlutenFree")
-                        .HasColumnType("INTEGER");
+                b.Property<bool>("IsGlutenFree")
+                    .HasColumnType("INTEGER");
 
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
+                b.Property<string>("Name")
+                    .IsRequired()
+                    .HasColumnType("TEXT");
 
-                    b.Property<decimal>("Price")
-                        .HasColumnType("TEXT");
+                b.Property<decimal>("Price")
+                    .HasColumnType("TEXT");
 
-                    b.Property<int>("Size")
-                        .HasColumnType("INTEGER");
+                b.Property<int>("Size")
+                    .HasColumnType("INTEGER");
 
-                    b.HasKey("Id");
+                b.HasKey("Id");
 
-                    b.ToTable("Pizzas");
-                });
+                b.ToTable("Pizzas");
+            });
 #pragma warning restore 612, 618
-        }
     }
 }
