@@ -1,7 +1,7 @@
 ﻿using ObjCRuntime;
 using UIKit;
 
-namespace MyMauiApp;
+namespace Phoneword;
 
 public class Program
 {

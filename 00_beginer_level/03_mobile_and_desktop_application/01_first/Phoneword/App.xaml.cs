@@ -1,6 +1,6 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 
-namespace MyMauiApp;
+namespace Phoneword;
 
 public partial class App : Application
 {

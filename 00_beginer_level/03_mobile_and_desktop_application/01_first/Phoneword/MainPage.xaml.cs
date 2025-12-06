@@ -1,4 +1,4 @@
-﻿namespace MyMauiApp;
+﻿namespace Phoneword;
 
 public partial class MainPage : ContentPage
 {
